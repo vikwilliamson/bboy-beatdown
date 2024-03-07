@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The B-Boy Beatdown</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color: #8a7473; font-family: Permanent Marker, cursive;">
+    <nav class="text-white p-4" style="background-color: #627687;">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="font-bold text-2xl"><a href="index.html">The B-Boy Beatdown</a></h1>
+            <ul class="flex space-x-4">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section class="mx-auto">
+        <div class="flex justify-center items-center w-full" style="background-color: #8a7473;">
+            <p class="text-center text-2xl" style="width: 100vw">The Tri-Cities will be experiencing a hip-hop festival like never before. Breakdancing, rapping, graffiti and more will all be going down at the Uptown Theatre.</p>
+        </div>
+        <div class="flex justify-center items-center">
+            <iframe height="500" width="1000vw" src="./videos/bboyPromo.mp4" frameborder="0" allowfullscreen autoplay></iframe>
+        </div>
+        <div class="text-center w-full mt-8 mb-8 text-white" style="height: 10vh;">
+            <div id="countdown" class="font-bold" style="font-size: 3em;"></div>
+        </div>
+    </section>
+    <section>
+        <div class="p-4 shadow-lg flex justify-center items-center" style="background-color: #a0a3a2;">
+            <img src="./images/DV_One.jpeg" height="500" width="500" />
+        </div>
+        <div class="p-4 shadow-lg items-center" style="background-color: #816d65;">
+            <section class="text-center w-full">
+                <h1 class="font-bold text-2xl">Huge thanks to our Sponsors!</h1>
+            </section>
+        <div class="container mx-auto">
+            <div class="grid sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 py-5 w-full" style="height: 100vh;">
+                <div class="col-span-1">
+                    <img src="./images/RuffCuttLogo_Transparent.png" alt="DJ RuffCutt" class="w-full" style="height: 250px;">
+                </div>
+                <div class="col-span-1">
+                    <img src="./images/FP-Seal-Detail-4C.png" alt="Focal Point Media" class="w-full" style="height: 250px;">
+                </div>
+                <div class="col-span-1">
+                    <img src="./images/TeamRDlogo_transparent.png" alt="Team RD" class="w-full" style="height: 250px;">
+                </div>
+                <div class="col-span-1">
+                    <img src="./images/krlogo.png" alt="KingRedz" class="w-full" style="height: 250px;">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("March 9, 2024 13:00:00 GMT-0800").getTime();
+
+        // Update the countdown every second
+        const x = setInterval(function() {
+
+            // Get the current date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the countdown date
+            const distance = countDownDate - now;
+
+            // Calculate days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "LFG!!!";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
